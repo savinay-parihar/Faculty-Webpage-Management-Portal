@@ -1,0 +1,35 @@
+{% block head %}
+
+<title>Profile</title>
+{% endblock %}
+
+{% block body %}
+<!--<h1>{{ user }}</h1>-->
+<!--<p>{{ user.pk }}</p>-->
+<!--<p>{{ user.email }}</p>-->
+<!--<p>{{ user.profile.Designation }}</p>-->
+<!--<p> {{ user.profile.Department }}</p>-->
+
+
+
+
+
+<form method="post" action="/home/edit/" id="profile_home" name="profile">
+    {% csrf_token %}
+  <!--<label for="fname">Department</label>-->
+    <input type="text" id="Faculty_name" name="Faculty_name" placeholder="Faculty_Name"><br>
+    <input type="text" id="Academic_position" name="Academic_position" placeholder="Academic_position"><br>
+    <input type="text" id="Phone" name="Phone" placeholder="Phone"><br>
+    <input type="text" id="RoomNo" name="RoomNo" placeholder="Room Number"><br>
+    <input type="text" id="About" name="About" placeholder="About"><br>
+
+    <input type="text" id="Department" name="Department" placeholder="Department"><br>
+    <input type="text" id="Fax" name="Fax" placeholder="Fax"><br>
+    <input type="submit" value="submit" form="profile_home">
+
+</form>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Classy Register Form Responsive Widget Template :: W3layouts</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Classy Register Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+
+<!-- Meta tag Keywords -->
+<!-- css files -->
+	{% load static %}
+<link href="{% static 'login/style_user_signup.css' %}" rel="stylesheet" type="text/css" media="all">
+<!-- //css files -->
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+<!--//online-fonts -->
+</head>
+<body>
+<div class="header">
+	<h1>IIT Guwahati</h1>
+</div>
+<div class="w3-main">
+	<!-- Main -->
+	<div class="about-bottom main-agile book-form">
+		<div class="alert-close"> </div>
+		<h2 class="tittle">Register Here</h2>
+		<form action="" method="post" id="signup">
+			{% csrf_token %}
+			{% for field in form %}
+			<div class="form-date-w3-agileits">
+				 <!--<div>-->
+            		<!--<span>{{ field.errors }}</span>-->
+        		<!--</div>-->
+				<!--<label> {{ field.label_tag }} </label>-->
+				<!--<input type="text" name="{{ field }} ">-->
+
+			<!--</div>--> <div>
+        <div>
+            <span>{{ field.errors }}</span>
+        </div>
+        <label>{{ field.label_tag }}</label>
+        <div>{{ field }}</div><br>
+    </div>
+			{% endfor %}
+			<div class="make wow shake">
+				  <input type="submit" value="Register" form="signup">
+			</div>
+		</form>
+	</div>
+	<!-- //Main -->
+</div>
+<!-- footer -->
+<div class="footer-w3l">
+</div>
+<!-- //footer -->
+<!-- js-scripts-->
+
+<!-- //js-scripts-->
+</body>
+</html>

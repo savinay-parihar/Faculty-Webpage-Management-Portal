@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Startmin - Bootstrap Admin Theme</title>
+        
+        {% load static %}
+       <!-- Bootstrap Core CSS -->
+        <link href="{% static 'login/bootstrap.min_portal.css' %}" rel="stylesheet">
+
+        <!-- MetisMenu CSS -->
+        <link href="{% static 'login/metisMenu.min_portal.css' %}" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{% static 'login/startmin_portal.css' %}" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="{% static 'login/font-awesome.min_portal.css' %}" rel="stylesheet" type="text/css">
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+        <div id="wrapper">
+
+            <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Startmin</a>
+                </div>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+               
+                <ul class="nav navbar-right navbar-top-links">
+                    <li class="dropdown navbar-inverse">
+                        
+                             <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                       
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a class="text-center" href="#">
+                                   
+                                   
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            {{ user }} <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#"> User Profile</a>
+                            </li>
+                         
+                            <li class="divider"></li>
+                            <li><a href="{% url 'login:logout'  %}"> Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.navbar-top-links -->
+
+                      <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                            <li class="sidebar-search">
+                                <div class="input-group custom-search-form">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                </span>
+                                </div>
+                                <!-- /input-group -->
+                            </li>
+                             <li>
+                                        <a  href="{% url 'login:portal_home' %} ">Home</a>
+                                    </li>
+                            <li>
+                                <a href="{% url 'login:portal_qualification' %}" >Qualifications</a>
+                            </li>
+
+                                 <li>
+                                <a href="{% url 'login:portal_teaching' %}" >Teachings</a>
+                            </li>
+                            <li>
+                                  <a href="{% url 'login:portal_publication' %}">Publications</a>
+                            </li>
+                             <li>
+                                <a href="{% url 'login:portal_project' %}" > Projects</a>
+                                <!-- /.nav-second-level -->
+                            </li>
+                             <li>
+                                        <a href="{% url 'login:portal_experience' %}">Experience</a>
+                                    </li>
+                            <li>
+                              
+            </nav>
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Publications</h1>
+                          <div class="form-group">
+                                <form method="post" action="/home/portal_form/publication/" id="portal_project" name="portal_project">
+                                       {% csrf_token %}
+
+                                                <label>Type of Publication</label>
+                                                <select class="form-control" id="type" id="Type" name="Type"><br>
+                                                    <option>Choose the field..</option>
+                                                    <option>Journal Papers</option>
+                                                    <option>Conferenece Papers</option>
+                                                    <option>Book Chapters</option>
+                                                    <option>Books</option>
+                                                    
+                                                </select><br>
+                                                <label>Title</label>
+                                                <input class="form-control" placeholder="Sponser of project" id="Title" name="Title"><br>
+                                                <label>About</label>
+                                                <textarea class="form-control" rows="3" id="Description" name="Description"></textarea><br>
+                                            <button type="submit" class="btn btn-default">Submit</button><br><br>
+                                            <button type="reset" class="btn btn-default">Reset</button>
+
+                                </form>
+                        </div>
+
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+               
+        </div>
+        <!-- /#wrapper -->
+
+        <!-- jQuery -->
+        <script src="{% static 'login/jquery.min_portal.js' %}"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{% static 'login/bootstrap.min_portal.js' %}"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="{% static 'login/metisMenu.min_portal.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="{% static 'login/startmin_portal.js"></script>
+    </body>
+</html>

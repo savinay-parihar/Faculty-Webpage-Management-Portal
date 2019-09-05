@@ -1,0 +1,19 @@
+<html>
+
+<!--{{ user.profile.Department }}-->
+<!--{{ user.profile.Faculty_name }}-->
+{{ user.qualification.Undergraduate }}
+{{ user.id }}
+{{ user.profile.profile_pic.url }}
+
+
+<tbody>{% for field in user.teaching_set.all|dictsort:"year" %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ field.year }}</td>
+        <td>{{ field.semester }}</td>
+        <td> {{ field.Course_name }}</td><br>
+    </tr>
+    {% endfor %}
+</tbody>
+</html>

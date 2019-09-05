@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Faculty-Responsive university staff personal page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="owwwlab.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta name="description" content="A theme for faculty profile page" />
+        <meta name="keywords" content="faculty profile, theme,css, html, jquery, transition, transform, 3d, css3" />
+
+        <link rel="shortcut icon" href="../favicon.ico">
+        {% load static %}
+        <!--CSS styles-->
+        <link rel="stylesheet" href="{% static 'login/bootstrap_profile.css' %}">
+        <link rel="stylesheet" href="{% static 'login/font-awesome.min_profile.css' %}">
+        <link rel="stylesheet" href="{% static 'login/perfect-scrollbar-0.4.5.min_profile.css' %}">
+        <link rel="stylesheet" href="{% static 'login/magnific-popup_profile.css' %}">
+        <link rel="stylesheet" href="{% static 'login/style_profile.css' %}">
+        <link id="theme-style" rel="stylesheet" href="{% static 'login/theme-style_profile.css' %}">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">)
+
+        <!--/CSS styles-->
+        <!--Javascript files-->
+        <script type="text/javascript" src="{% static 'login/jquery-1.10.2.js' %}"></script>
+        <script type="text/javascript" src="{% static 'login/TweenMax.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'login/jquery.touchSwipe.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'login/jquery.carouFredSel-6.2.1-packed.js' %}"></script>
+        
+        <script type="text/javascript" src="{% static 'login/modernizr.custom.63321.js' %}"></script>
+        <script type="text/javascript" src="{% static 'login/jquery.dropdownit.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'login/jquery.stellar.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'login/ScrollToPlugin.min.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'login/bootstrap.min.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'login/jquery.mixitup.min.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'login/masonry.min.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'login/perfect-scrollbar-0.4.5.with-mousewheel.min.js' %}"></script>
+
+        <script type="text/javascript" src="{% static 'login/magnific-popup.js' %}"></script>
+        <script type="text/javascript" src="{% static 'login/custom.js' %}"></script>
+
+        <!--/Javascript files-->
+
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <a href="#sidebar" class="mobilemenu"><i class="icon-reorder"></i></a>
+
+            <div id="sidebar">
+                <div id="main-nav">
+                    <div id="nav-container">
+                        <div id="profile" class="clearfix">
+
+                            <img  class="portrate" src="{% static 'login/IIT_Guwahati_Logo.svg.png' %}">
+                            <div class="title">
+                                    <h2>{{ user.profile.Faculty_name }}</h2>
+                                <h3>IIT GUWAHATI</h3>
+                            </div>
+                            
+                        </div>
+                        <ul id="navigation">
+                            <li>
+                              <a href="#biography">
+                                <div class="icon icon-user" ></div>
+                                   {% csrf_token %}
+                                  <div class="text">About Me</></div>
+                              </a>
+                            </li>  
+                            
+                            <li>
+                              <a href="#research">
+                                <div class="icon icon-book"></div>
+                                <div class="text">Research</div>
+                              </a>
+                            </li> 
+                            
+                            <li>
+                              <a href="#publications">
+                                <div class="icon icon-edit"></div>
+                                <div class="text">Publications</div>
+                              </a>
+                            </li> 
+
+                            <li>
+                              <a href="#teaching">
+                                <div class="icon icon-time"></div>
+                                <div class="text">Teaching</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="#gallery">
+                                <div class="icon icon-briefcase"></div>
+                                <div class="text">Works and Experience</div>
+                              </a>
+                            </li>
+
+                            <li>
+                              <a href="#contact">
+                                    <div class="icon icon-calendar"></div>
+                                  <div class="text">Contact & Meet Me</div>
+                              </a>
+                            </li>
+
+                            <!--<li class="external">-->
+                              <!--<a target="_blank" href="#">-->
+                                  <!--<div class="icon icon-download-alt"></div>-->
+                                  <!--<div class="text">Download CV</div>-->
+                              <!--</a>-->
+                            <!--</li>-->
+                        </ul>
+                    </div>        
+                </div>
+                
+                <div class="social-icons">
+                    <!--<ul>
+                        <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                    </ul>-->
+                </div>    
+            </div>
+             
+            <div id="main">
+            
+                <div id="biography" class="page home" data-pos="home">
+                    <div class="pageheader">
+                        <div class="headercontent">
+                            <div class="section-container">
+                                
+                                <div class="row">
+                                    <div class="col-sm-2 visible-sm"></div>
+                                    <div class="col-sm-8 col-md-5">
+                                        <div class="biothumb">
+                                            <img alt="image" src="{{ user.profile.profile_pic.url }}" class="img-responsive">
+                                            <div class="overlay">
+                                                
+                                                <h1 class="">{{user.profile.Faculty_name }}</h1>
+                                                <ul class="list-unstyled">
+
+
+                                                    <li>IIT GUWAHATI</li>
+                                                </ul>
+                                            </div> 
+                                            
+                                               
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="clearfix visible-sm visible-xs"></div>
+
+                                    <div class="col-sm-12 col-md-7">
+                                        <h3 class="title">In Brief</h3>
+
+                                        <h3 split="text-align:center">Designation : {{ user.profile.Academic_position }}</h3>
+                                        <h3 split="text-align:center">Department : {{ user.profile.Department }}</h3>
+
+                                        <h3>{{ user.profile.About }}</h3>
+                                        <!--<h4><strong>Webmail :</strong> &nbsp {{user.email }}</h4>-->
+                                        <!--<h4><strong>Room :</strong> &nbsp{{user.profile.RoomNo}}</h4>-->
+                                        <!--<h4><strong>Phone :</strong>&nbsp {{ user.profile.Phone }}</h4>-->
+
+                                    </div>
+                                    
+                                </div>
+                            </div>        
+                        </div>
+                    </div>
+
+                    <div class="pagecontents">
+                        <div class="section color-1">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="col-md-5 col-md-offset-1">
+                                        <div class="title text-center">
+                                            <h3>Academic Positions</h3>
+                                        </div>
+                                        <ul class="ul-dates">
+                                            <li>
+                                                <div class="dates">
+                                                    <span>Present</span>
+                                                    <span>2005</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4>General Atlantic Professor</h4>
+                                                    <p><em>Stanford University</em>, Graduate School of Business</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="dates">
+                                                    <span>2005</span>
+                                                    <span>2004</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4>Full Professor</h4>
+                                                    <p><em>Stanford University</em>, Graduate School of Business</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="dates">
+                                                    <span>2004</span>
+                                                    <span>2001</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4>Assistant Professor</h4>
+                                                    <p><em>UCLA</em>, Anderson Graduate School of Management</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="dates">
+                                                    <span>2001</span>
+                                                    <span>1999</span>
+                                                </div>
+                                                <div class="content">
+                                                    <h4>Visiting Assistant Professor</h4>
+                                                    <p><em>Columbia University</em>, Graduate School of Business</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="title text-center">
+                                            <h3>Education & Training</h3>
+                                        </div>
+                                        <ul class="ul-card">
+                                            <li>
+                                                <div class="dy">
+                                                    <span class="degree">{{ user.qualification.Undergraduate}}</span>
+                                                    <span class="year">{{ user.qualification.Undergraduate_year}}</span>
+
+                                                </div>
+                                                <div class="description">
+                                                    <p class="where">{{ user.qualification.Undergraduate_college }}</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="dy">
+                                                    <span class="degree">{{ user.qualification.Postgraduate }}</span><span class="year">{{ user.qualification.Postgraduate_year }}</span>
+                                                </div>
+                                                <div class="description">
+
+                                                    <p class="where">{{ user.qualification.Postgraduate_college }}</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="dy">
+                                                    <span class="degree">{{ user.qualification.Phd}}</span><span class="year">{{user.qualification.Phd_year}}</span>
+                                                </div>
+                                                <div class="description">
+                                                    <p class="where">{{ user.qualification.Phd_college}}</p>
+                                                </div>
+                                            </li>
+                                            
+                                        </ul>
+
+                                    </div>    
+                                </div>    
+                            </div>
+                                
+                        </div>
+
+                        <div class="section color-2">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="col-md-10 col-md-offset-1">
+                                        <div class="title text-center">
+                                            <h3>Honors, Awards and Grants</h3>
+                                        </div>
+                                        <ul class="timeline">
+                                                    
+                                            <li class="open">
+                                                <div class="date">SCP 2014</div>
+                                                <div class="circle"></div>
+                                                <div class="data">
+                                                    <div class="subject">Distinguished Scientific Achievement Award</div>
+                                                    <div class="text row">
+                                                        <div class="col-md-2">
+                                                            <img alt="image" class="thumbnail img-responsive" src="{% static 'login/awards100x100.png' %}" >
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas dapibus lectus non dignissim. Pellentesque auctor ornare urna, volutpat condimentum quam porttitor at. Vestibulum tincidunt diam in eros aliquam luctus. Donec sagittis a purus a porttitor. Sed non feugiat enim. Donec eget metus erat. Vivamus sed consequat orci. Aenean commodo lectus sed purus auctor ullamcorper.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="date">2012-2013</div>
+                                                <div class="circle"></div>
+                                                <div class="data">
+                                                    <div class="subject">Ormond Family Faculty Fellow</div>
+                                                    <div class="text row">
+                                                        <div class="col-md-2">
+                                                            <img alt="image" class="thumbnail img-responsive" src="{% static 'login/awards100x100.png' %}" >
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas dapibus lectus non dignissim. Pellentesque auctor ornare urna, volutpat condimentum quam porttitor at. Vestibulum tincidunt diam in eros aliquam luctus. Donec sagittis a purus a porttitor. Sed non feugiat enim. Donec eget metus erat. Vivamus sed consequat orci. Aenean commodo lectus sed purus auctor ullamcorper.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="date">June 2011</div>
+                                                <div class="circle"></div>
+                                                <div class="data">
+                                                    <div class="subject">Nautilus Silver Award for Dragonfly Effect</div>
+                                                    <div class="text row">
+                                                        <div class="col-md-2">
+                                                            <img alt="image" class="thumbnail img-responsive" src="{% static 'login/awards100x100.png' %}" >
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas dapibus lectus non dignissim. Pellentesque auctor ornare urna, volutpat condimentum quam porttitor at. Vestibulum tincidunt diam in eros aliquam luctus. Donec sagittis a purus a porttitor. Sed non feugiat enim. Donec eget metus erat. Vivamus sed consequat orci. Aenean commodo lectus sed purus auctor ullamcorper.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="date">2000 - 2003</div>
+                                                <div class="circle"></div>
+                                                <div class="data">
+                                                    <div class="subject">Hong Kong Science International Research Grant</div>
+                                                    <div class="text row">
+                                                        <div class="col-md-2">
+                                                            <img alt="image" class="thumbnail img-responsive" src="{% static 'login/awards100x100.png' %}" >
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas dapibus lectus non dignissim. Pellentesque auctor ornare urna, volutpat condimentum quam porttitor at. Vestibulum tincidunt diam in eros aliquam luctus. Donec sagittis a purus a porttitor. Sed non feugiat enim. Donec eget metus erat. Vivamus sed consequat orci. Aenean commodo lectus sed purus auctor ullamcorper.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="date">1999</div>
+                                                <div class="circle"></div>
+                                                <div class="data">
+                                                    <div class="subject">Citibank Best Teacher Award (school-wide award, UCLA)</div>
+                                                    <div class="text row">
+                                                        <div class="col-md-2">
+                                                            <img alt="image" class="thumbnail img-responsive" src="{% static 'login/awards100x100.png' %}" >
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas dapibus lectus non dignissim. Pellentesque auctor ornare urna, volutpat condimentum quam porttitor at. Vestibulum tincidunt diam in eros aliquam luctus. Donec sagittis a purus a porttitor. Sed non feugiat enim. Donec eget metus erat. Vivamus sed consequat orci. Aenean commodo lectus sed purus auctor ullamcorper.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                            
+                    </div>
+                </div>
+
+                <div id="research" class="page">
+                    <div class="pageheader">
+
+                        <div class="headercontent">
+
+                            <div class="section-container">
+                                <h2 class="title">Research Summary</h2><h3 style="text-align:center;">" Those who LEARN more than they teach, are the best TEACHERS of all  "</h3>
+                                <!--<div class="row">-->
+                                    <!--<div class="col-md-8">-->
+                                         <!---->
+                               <!---->
+                                         <!--</div>-->
+                                    <!--<div class="col-md-4">-->
+                                        <!--<div class="subtitle text-center">-->
+                                            <!--<h3>Interests</h3>-->
+                                        <!--</div>-->
+                                        <!--<ul class="ul-boxed list-unstyled">-->
+                                            <!--<li>Time, Money and Happiness</li>-->
+                                            <!--<li>The Power of Story</li>-->
+                                            <!--<li>Building Innovative Brands</li>-->
+                                            <!--<li>Cultural Psychology</li>-->
+                                            <!--<li>Emotions, Goals, and Health</li>-->
+                                            <!--<li>computer-aided design</li>-->
+                                        <!--</ul>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pagecontents">
+
+                        <div class="section color-2">
+                            <div class="section-container">
+                                <div class="title text-center">
+                                    <h3>Research Projects</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="ul-withdetails">
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class="image">
+                                                            <!--<img alt="image" src="{% static 'login/400x400.png' %}" class="img-responsive">-->
+                                                            <div class="imageoverlay">
+                                                                <i class="icon icon-search"></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-9">
+
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <tbody>{% for field in user.project_set.all %}
+                                            <li>
+                                                <div class="row">
+
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class="image">
+                                                            <img alt="image" src="{% static 'login/400x400.png' %}"  class="img-responsive">
+                                                            <div class="imageoverlay">
+                                                                <i class="icon icon-search"></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-9">
+                                                        <div class="meta">
+
+                                                            <h3>Title : {{ field.Title }}</h3>
+                                                            <h3>Sponser : {{ field.Sponser }}</h3>
+                                                            <h3>Duration : {{ field.start_year }} - {{ field.end_year }}</h3>
+                                                            <h3>Role :  {{  field.Role }} </h3>
+                                                            <p>Very short description of the project.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="details">
+                                                <p>{{ field.Description }}</p>
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+                                        </tbody>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class="image">
+                                                            <!--<img alt="image" src="{% static 'login/400x400.png' %}"  class="img-responsive">-->
+                                                            <div class="imageoverlay">
+                                                                <i class="icon icon-search"></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-9">
+
+                                                    </div>
+                                                </div>
+                                                <div class="details">
+                                                      </div>
+                                            </li>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class="image">
+                                                            <!--<img alt="image" src="{% static 'login/400x400.png' %}"  class="img-responsive">-->
+                                                            <div class="imageoverlay">
+                                                                <i class="icon icon-search"></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-9">
+
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class="image">
+                                                            <!--<img alt="image" src="{% static 'login/400x400.png' %}"  class="img-responsive">-->
+                                                            <div class="imageoverlay">
+                                                                <i class="icon icon-search"></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-9">
+
+                                                    </div>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-md-3">
+                                                        <div class="image">
+                                                            <!--<img alt="image" src="{% static 'login/400x400.png' %}"  class="img-responsive">-->
+                                                            <div class="imageoverlay">
+                                                                <i class="icon icon-search"></i>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-9">
+
+                                                    </div>
+                                                </div>
+
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+
+                <div id="publications" class="page">
+                    <div class="page-container">
+                        <div class="pageheader">
+                            <div class="headercontent">
+                                <div class="section-container">
+                                    
+                                    <h2 class="title">Publications</h2>
+                                     <div class="row">
+                                        <div class="col-md-12">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pagecontents">
+                             <h3 style="text-align:center;">Journal Papers</h3>
+                            <div class="section color-2" id="pub-grid">
+                                {% for obj in user.publication_set.all %}
+                                {% if obj.Type == "Journal Papers" %}
+
+
+
+                                <div class="section-container">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="pitems">
+                                                
+                                                <div class="item mix cpaper" data-year="2013">
+                                                    <div class="pubmain">
+                                                        <div class="pubassets">
+                                                            
+                                                        </div>
+
+                                                        <h4 class="pubtitle" style="text-align:center;">{{obj.Title}}</h4>
+                                                        <p style="text-align:center;">{{obj.Description}}</p>
+                                                        <!--<div class="pubauthor"><strong>Jennifer Doe</strong>,  Emily N. Garbinsky, Kathleen D. Vohs</div>-->
+                                                        <!--<div class="pubcite"><span class="label label-warning">Conference Papers</span> Journal of Consumer Psychology, Volume 22, Issue 2, April 2012, Pages 191-194</div>-->
+
+                                                    </div>
+                                                    <div class="pbdetails">
+                                                        <!--<h4>Abstract</h4>-->
+                                                        <!--<p>Although a substantial amount of research has examined the constructs of warmth and competence, far less has examined how these constructs develop and what benefits may accrue when warmth and competence are cultivated. Yet there are positive consequences, both emotional and behavioral, that are likely to occur when brands hold perceptions of both. In this paper, we shed light on when and how warmth and competence are jointly promoted in brands, and why these reputations matter.</p>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+
+                            <h3 style="text-align:center;">Conference Papers</h3>
+                            <div class="section color-2" id="pub-grid">
+                                {% for obj in user.publication_set.all %}
+                                {% if obj.Type == "Conference Papers" %}
+                                <div class="section-container">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="pitems">
+
+                                                <div class="item mix cpaper" data-year="2013">
+                                                    <div class="pubmain">
+                                                        <div class="pubassets">
+
+                                                        </div>
+
+                                                        <h4 class="pubtitle" style="text-align:center;">{{obj.Title}}</h4>
+                                                        <p style="text-align:center;">{{obj.Description}}</p>
+                                                        <!--<div class="pubauthor"><strong>Jennifer Doe</strong>,  Emily N. Garbinsky, Kathleen D. Vohs</div>-->
+                                                        <!--<div class="pubcite"><span class="label label-warning">Conference Papers</span> Journal of Consumer Psychology, Volume 22, Issue 2, April 2012, Pages 191-194</div>-->
+
+                                                    </div>
+                                                    <div class="pbdetails">
+                                                        <!--<h4>Abstract</h4>-->
+                                                        <!--<p>Although a substantial amount of research has examined the constructs of warmth and competence, far less has examined how these constructs develop and what benefits may accrue when warmth and competence are cultivated. Yet there are positive consequences, both emotional and behavioral, that are likely to occur when brands hold perceptions of both. In this paper, we shed light on when and how warmth and competence are jointly promoted in brands, and why these reputations matter.</p>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+
+                            <h3 style="text-align:center;">Book Chapters</h3>
+                            <div class="section color-2" id="pub-grid">
+                                {% for obj in user.publication_set.all %}
+                                {% if obj.Type == "Book Chapters" %}
+                                <div class="section-container">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="pitems">
+
+                                                <div class="item mix cpaper" data-year="2013">
+                                                    <div class="pubmain">
+                                                        <div class="pubassets">
+
+                                                        </div>
+
+                                                        <h4 class="pubtitle" style="text-align:center;">{{obj.Title}}</h4>
+                                                        <p style="text-align:center;">{{obj.Description}}</p>
+                                                        <!--<div class="pubauthor"><strong>Jennifer Doe</strong>,  Emily N. Garbinsky, Kathleen D. Vohs</div>-->
+                                                        <!--<div class="pubcite"><span class="label label-warning">Conference Papers</span> Journal of Consumer Psychology, Volume 22, Issue 2, April 2012, Pages 191-194</div>-->
+
+                                                    </div>
+                                                    <div class="pbdetails">
+                                                        <!--<h4>Abstract</h4>-->
+                                                        <!--<p>Although a substantial amount of research has examined the constructs of warmth and competence, far less has examined how these constructs develop and what benefits may accrue when warmth and competence are cultivated. Yet there are positive consequences, both emotional and behavioral, that are likely to occur when brands hold perceptions of both. In this paper, we shed light on when and how warmth and competence are jointly promoted in brands, and why these reputations matter.</p>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+
+                            <h3 style="text-align:center;">Books</h3>
+                            <div class="section color-2" id="pub-grid">
+                                {% for obj in user.publication_set.all %}
+                                {% if obj.Type == "Books" %}
+                                <div class="section-container">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="pitems">
+
+                                                <div class="item mix cpaper" data-year="2013">
+                                                    <div class="pubmain">
+                                                        <div class="pubassets">
+
+                                                        </div>
+
+                                                        <h4 class="pubtitle" style="text-align:center;">{{obj.Title}}</h4>
+                                                        <p style="text-align:center;">{{obj.Description}}</p>
+                                                        <!--<div class="pubauthor"><strong>Jennifer Doe</strong>,  Emily N. Garbinsky, Kathleen D. Vohs</div>-->
+                                                        <!--<div class="pubcite"><span class="label label-warning">Conference Papers</span> Journal of Consumer Psychology, Volume 22, Issue 2, April 2012, Pages 191-194</div>-->
+
+                                                    </div>
+                                                    <div class="pbdetails">
+                                                        <!--<h4>Abstract</h4>-->
+                                                        <!--<p>Although a substantial amount of research has examined the constructs of warmth and competence, far less has examined how these constructs develop and what benefits may accrue when warmth and competence are cultivated. Yet there are positive consequences, both emotional and behavioral, that are likely to occur when brands hold perceptions of both. In this paper, we shed light on when and how warmth and competence are jointly promoted in brands, and why these reputations matter.</p>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="teaching" class="page">
+                    <div class="pageheader">
+                        <div class="headercontent">
+                            <div class="section-container">
+                                
+                                <h2 class="title">Teaching</h2>
+                                
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3 style="text-align:center;">"Teaching is not a service , profession or a job . It is a pillar of the society"</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagecontents">
+                        <div class="section color-1">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="title text-center">
+                                        <h3>Current Teaching</h3>
+                                    </div>
+                                     <tbody>{% for obj in user.teaching_set.all %}
+                                    <ul class="ul-dates">
+                                        {% if obj.status == "Current" %}
+                                        <li>
+                                            <div class="dates">
+                                                <span>{{obj.semester}}</span>
+                                            </div><br>
+                                            <div class="content">
+                                                <h4>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{obj.Course_name}}</h4>
+                                            </div>
+                                        </li>
+                                        {% endif %}
+
+                                    </ul>{% endfor %}
+                                     </tbody>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section color-2">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="title text-center">
+                                        <h3>Teaching History</h3>
+                                    </div>
+                                    <tbody>{% for obj in user.teaching_set.all %}
+                                    <ul class="ul-dates-gray">
+                                        {% if obj.status == "Past" %}
+                                        <li>
+                                            <div class="dates">
+                                                <span>{{obj.semester}}</span>
+                                                <span>{{obj.year}}</span>
+                                            </div><br>
+                                            &nbsp
+                                            <div class="content">
+                                                <h4>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{obj.Course_name}}</h4>
+                                            </div>
+                                        </li>
+                                        {% endif %}
+                                    </ul>{% endfor %}
+                                    </tbody>
+                                       </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="gallery" class="page">
+                    <div class="pagecontents">
+
+                        <div class="section color-3" id="gallery-header">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h2>Works</h2>
+                                    </div>
+                                    <div class="col-md-9">
+                                    <h3>"There  is  nothing  so  easy  to  learn  as  experience  and  nothing  so  hard  to  apply "<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-Josh  Billings</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <tbody>{% for obj in user.experience_set.all %}
+                        <div class="section contact-office" data-stellar-background-ratio="0.1">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h2 class="title">{{obj.start_year}}&nbsp-&nbsp{{obj.end_year}}</h2>
+                                        <h4>{{ obj.Responsibility}}</h4>
+                                        <h4>{{ obj.About}}</h4><br>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        </tbody>
+
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+                <div id="contact" class="page stellar">
+                    <div class="pageheader">
+                        <div class="headercontent">
+                            <div class="section-container">
+                                
+                                <h2 class="title">Contact & Meet Me</h2>
+                            
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <!--<p>I would be happy to talk to you if you need my assistance in your research or whether you need bussiness administration support for your company. Though I have limited time for students but I Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                              -->
+                                    </div>
+                                    <div class="col-md-4">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <strong><i class="icon-phone"></i>&nbsp;&nbsp;</strong>
+                                                <span>{{user.profile.Phone}}</span>
+                                            </li>
+
+                                            <li>
+                                                <strong><i class="icon-envelope"></i>&nbsp;&nbsp;</strong>
+                                                <span>{{ use.profile.webmail}}</span>
+                                            </li>
+
+                                            <li>
+                                                <strong><i class="icon-linkedin-sign"></i>&nbsp;&nbsp;</strong>
+                                                <span><a href="#">{{user.profile.linkedin}}</a></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagecontents">
+                        <div class="section contact-office" data-stellar-background-ratio="0.1">
+                            <div class="section-container">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h2 class="title">At My Office</h2>
+                                        <h4>Department : {{ user.profile.Department}}</h4>
+                                        <h4>Room Number : {{ user.profile.RoomNo}}</h4><br>
+                                    </div>
+                                    <div class="col-md-4 text-center hidden-xs hidden-sm">
+                                        <i class="icon-coffee icon-huge"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="section color-1">-->
+                            <!--<div class="section-container">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-md-4 text-center hidden-xs hidden-sm">-->
+                                        <!--<i class="icon-stethoscope icon-huge"></i>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-md-8">-->
+                                        <!--<h2 class="title">At My Work</h2>-->
+                                        <!--<p>You can find me at my Work located at Stanford University Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+                                        <!--<p>I am at my office every day from 7:00 until 10:00 am, but you may consider a call to fix an appointment.</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="section contact-lab" data-stellar-background-ratio="0.1">-->
+                            <!--<div class="section-container">-->
+                                <!--<div class="row">-->
+                                    <!---->
+                                    <!--<div class="col-md-8">-->
+                                        <!--<h2 class="title">At My Lab</h2>-->
+                                        <!--<p>You can find me at my office located at Stanford University Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>-->
+                                        <!--<p>I am at my office every day from 7:00 until 10:00 am, but you may consider a call to fix an appointment.</p>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-md-4 text-center hidden-xs hidden-sm">-->
+                                        <!--<i class="icon-superscript icon-huge"></i>-->
+                                    <!--</div>-->
+
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    
+                </div>
+                
+                <div id="overlay"></div>
+            
+            </div>
+        </div>
+    </body>
+</html>
+
